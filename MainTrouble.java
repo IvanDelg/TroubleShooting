@@ -63,17 +63,10 @@ public class MainTrouble extends JFrame{
 		start();
 	}
 	private void start() {
-		int xxx=0;
 		while(true) {
-			if(wordFor!=null) {
-				menuFor(wordFor);
-			}else {
-				if(xxx>0){
-				}else{
-				mainMenu();
-				}
-				xxx++;
-			}
+			mainMenu();
+			waitForIt();
+			menuFor(wordFor);
 		}
 	}
 	private void mainMenu() {
@@ -93,7 +86,6 @@ public class MainTrouble extends JFrame{
 		for(int x=0;x<simpleWords.length;x++) {
 			if(word.equals(simpleWords[x][0])) {
 				wordCol=x;
-				System.out.println(word);
 			}
 		}
 		
