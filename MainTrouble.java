@@ -10,7 +10,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class MainTrouble extends JFrame{
-	final String DeveloperName="Ivan Delgado";
 	String searchWord="";
 	String[][] simpleWords= {
 			{
@@ -42,11 +41,12 @@ public class MainTrouble extends JFrame{
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		for(int x=0,j=0,y=0;x<11;x++) {
 			button[x]=new JButton();
-			button[x].setEnabled(false);
-			button[x].setVisible(false);
+			button[x].setEnabled(true);
+			button[x].setVisible(true);
 			button[x].setSize(300,200);
 			button[x].setText(simpleWords[y][j]);
 			button[x].setName(simpleWords[y][j]);
+			System.out.println(simpleWords[y][j]);
 			button[x].addActionListener(
 						new ActionListener() {
 							public void actionPerformed(ActionEvent e) {
@@ -54,10 +54,12 @@ public class MainTrouble extends JFrame{
 							}
 						}
 					);
-			j++;
-			if((x+1)%4==0&&x<=8) {
+			if((x+1)%4==0) {
 				y++;
 				j=0;
+			}
+			if(j<3){
+				j++;
 			}
 		}
 		start();
